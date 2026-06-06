@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1-Month Study Plan — Full Stack, Networking & Arduino</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-tabs">
+  <button class="page-tab active" onclick="switchPage('plan')">📅 Study Plan</button>
+  <button class="page-tab" onclick="switchPage('routine')">⏰ Daily Routine</button>
+  <button class="page-tab" onclick="switchPage('workout')">💪 Workout</button>
+</div>
+
+<div id="page-plan" class="page-section active">
+<header>
+  <div class="header-left">
+    <h1>1-Month Study Plan</h1>
+    <p>// FULL-STACK WEB · NETWORKING · ARDUINO HARDWARE</p>
+  </div>
+  <div class="legend">
+    <div class="leg"><div class="leg-dot" style="background:#9b8dff"></div> Full-stack web</div>
+    <div class="leg"><div class="leg-dot" style="background:#2dd4a0"></div> Networking</div>
+    <div class="leg"><div class="leg-dot" style="background:#ff6b4a"></div> Arduino</div>
+    <div class="leg"><div class="leg-dot" style="background:#5a5a6e"></div> Rest</div>
+  </div>
+</header>
+
+<main>
+  <div>
+    <div class="calendar-section" id="calendar"></div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label">
+        <span>Progress</span>
+        <span id="progress-text">0 / 28 days</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <div class="track-breakdown">
+        <div class="track-stat" style="background: var(--coral-dim);">
+          <span class="num" style="color:var(--coral)">8</span>
+          <span class="lbl">Arduino days</span>
+        </div>
+        <div class="track-stat" style="background: var(--purple-dim);">
+          <span class="num" style="color:var(--purple)">8</span>
+          <span class="lbl">Web days</span>
+        </div>
+        <div class="track-stat" style="background: var(--teal-dim);">
+          <span class="num" style="color:var(--teal)">8</span>
+          <span class="lbl">Networking days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-placeholder" id="detail-placeholder">
+      <span class="arrow">←</span>
+      <p>Click any day to see<br>what to study</p>
+    </div>
+    <div id="detail-content" style="display:none"></div>
+  </div>
+</main>
+
+</div><!-- end page-plan -->
+
+<!-- DAILY ROUTINE PAGE -->
+<div id="page-routine" class="page-section">
+<div class="routine-wrap">
+
+  <div class="routine-hero">
+    <div class="routine-hero-text">
+      <h2>Your Morning Study Routine</h2>
+      <p>// 4+ hrs/day · morning studier · mon–sat active · sun rest</p>
+    </div>
+    <div class="routine-badges">
+      <span class="routine-badge" style="background:var(--purple-dim);color:var(--purple)">4.5 hrs study</span>
+      <span class="routine-badge" style="background:var(--teal-dim);color:var(--teal)">Morning block</span>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-block">
+      <div class="tl-time">5:30 AM<div class="duration">15 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon">☀️</div>
+        <div class="tl-info">
+          <div class="tl-label">Wake up & freshen up</div>
+          <div class="tl-desc">Splash water, brush, quick stretch. No phone yet.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block tl-highlight" style="border-left-color:#4ade80">
+      <div class="tl-time">5:45 AM<div class="duration">45–60 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon" style="background:#4ade8018">💪</div>
+        <div class="tl-info">
+          <div class="tl-label" style="color:#4ade80">Workout — Bodyweight training</div>
+          <div class="tl-desc">Follow today's workout from the Workout tab. Mon/Wed/Fri = push or pull. Tue/Thu = legs & core. Sat = full body. Sun = rest.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block">
+      <div class="tl-time">6:45 AM<div class="duration">20 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon">🚿</div>
+        <div class="tl-info">
+          <div class="tl-label">Shower + breakfast</div>
+          <div class="tl-desc">Cold or warm shower to wake up fully. Eat a protein-rich breakfast — eggs, rice, or whatever you have. Hydrate.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block tl-highlight" style="border-left-color:var(--purple)">
+      <div class="tl-time">7:05 AM<div class="duration">90 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon" style="background:var(--purple-dim)">🧠</div>
+        <div class="tl-info">
+          <div class="tl-label" style="color:var(--purple)">Study Block 1 — Learn</div>
+          <div class="tl-desc">Read docs, watch tutorials, take notes. No coding yet — absorb the theory first. Use your study plan to know today's topic.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block">
+      <div class="tl-time">8:35 AM<div class="duration">10 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon">🧘</div>
+        <div class="tl-info">
+          <div class="tl-label">Short break</div>
+          <div class="tl-desc">Walk around, drink water, rest your eyes. No social media.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block tl-highlight" style="border-left-color:var(--coral)">
+      <div class="tl-time">8:45 AM<div class="duration">90 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon" style="background:var(--coral-dim)">💻</div>
+        <div class="tl-info">
+          <div class="tl-label" style="color:var(--coral)">Study Block 2 — Practice</div>
+          <div class="tl-desc">Hands-on coding or hardware wiring. Build the mini project for today's topic. This is where the real learning happens.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block">
+      <div class="tl-time">10:15 AM<div class="duration">15 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon">🥗</div>
+        <div class="tl-info">
+          <div class="tl-label">Snack break</div>
+          <div class="tl-desc">Light snack. Step outside for fresh air. Let your brain reset before the final block.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block tl-highlight" style="border-left-color:var(--teal)">
+      <div class="tl-time">10:30 AM<div class="duration">75 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon" style="background:var(--teal-dim)">🔨</div>
+        <div class="tl-info">
+          <div class="tl-label" style="color:var(--teal)">Study Block 3 — Build & debug</div>
+          <div class="tl-desc">Continue or polish the mini project. Debug errors, experiment, push beyond the tutorial. Write clean, commented code.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block">
+      <div class="tl-time">11:45 AM<div class="duration">10 min</div></div>
+      <div class="tl-content">
+        <div class="tl-icon">📝</div>
+        <div class="tl-info">
+          <div class="tl-label">Daily recap & notes</div>
+          <div class="tl-desc">Write 3–5 bullets: what you learned, what confused you, what to look up tomorrow.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block">
+      <div class="tl-time">12:00 PM<div class="duration">onward</div></div>
+      <div class="tl-content">
+        <div class="tl-icon">🎮</div>
+        <div class="tl-info">
+          <div class="tl-label">Rest of the day — free time</div>
+          <div class="tl-desc">Study and workout are done. Relax, eat lunch, socialize. Your brain and body need downtime to grow.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="routine-tips">
+    <div class="tip-card">
+      <div class="tip-icon">🔕</div>
+      <div class="tip-title">Phone on silent during blocks</div>
+      <div class="tip-text">Notifications destroy deep focus. Use airplane mode or a focus app during your 90-min blocks.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💧</div>
+      <div class="tip-title">Keep water at your desk</div>
+      <div class="tip-text">Dehydration kills concentration faster than anything. Have a full bottle ready before you start.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📖</div>
+      <div class="tip-title">One topic at a time</div>
+      <div class="tip-text">Don't mix today's track with another. If it's an Arduino day, stay on Arduino. Full focus beats scattered multitasking.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🐛</div>
+      <div class="tip-title">Stuck? Set a 20-min timer</div>
+      <div class="tip-text">If you're blocked on a bug or concept for 20 minutes, Google it or ask for help. Don't suffer in silence.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">✅</div>
+      <div class="tip-title">Mark days complete</div>
+      <div class="tip-text">Go to the Study Plan tab and mark each day done. Seeing your streak builds momentum.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔁</div>
+      <div class="tip-title">Review Sunday notes on Monday</div>
+      <div class="tip-text">Spend the first 10 minutes of Monday re-reading your recap notes from the past week before diving in.</div>
+    </div>
+  </div>
+
+  <div class="sunday-box">
+    <h3>☽ Sunday — Review & Rest Day</h3>
+    <ul class="sunday-list">
+      <li>Re-read all your notes from the week</li>
+      <li>Re-run any mini project that felt shaky</li>
+      <li>Watch 1 YouTube video on any topic from the week</li>
+      <li>Write 3 things you're proud of learning</li>
+      <li>Prep your desk/workspace for Monday</li>
+      <li>Sleep early — 8 hrs fuels better learning</li>
+    </ul>
+  </div>
+
+</div>
+</div><!-- end page-routine -->
+
+<!-- WORKOUT PAGE -->
+<div id="page-workout" class="page-section">
+<div class="workout-wrap">
+
+  <div class="workout-hero">
+    <div>
+      <h2>💪 Bodyweight Muscle Building</h2>
+      <p>// 4-week progressive program · no equipment · before study · 45–60 min/day</p>
+    </div>
+    <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="routine-badge" style="background:#4ade8022;color:#4ade80;border:1px solid #4ade8044;">6 days/week</span>
+      <span class="routine-badge" style="background:#4ade8022;color:#4ade80;border:1px solid #4ade8044;">Progressive overload</span>
+    </div>
+  </div>
+
+  <div class="wk-section-label">Weekly split</div>
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:1.5rem;">
+    <div style="background:var(--surface);border:1px solid #4ade8044;border-radius:10px;padding:10px 6px;text-align:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px;">MON</div>
+      <div style="font-size:11px;font-weight:600;color:#4ade80;">Push</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:2px;">Chest · Shoulders · Triceps</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px;">TUE</div>
+      <div style="font-size:11px;font-weight:600;color:#4ade80;">Legs + Core</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:2px;">Quads · Glutes · Abs</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px;">WED</div>
+      <div style="font-size:11px;font-weight:600;color:#4ade80;">Pull</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:2px;">Back · Biceps · Rear delts</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px;">THU</div>
+      <div style="font-size:11px;font-weight:600;color:#4ade80;">Legs + Core</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:2px;">Hamstrings · Calves · Obliques</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px;">FRI</div>
+      <div style="font-size:11px;font-weight:600;color:#4ade80;">Push</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:2px;">Chest · Shoulders · Triceps</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px;">SAT</div>
+      <div style="font-size:11px;font-weight:600;color:#4ade80;">Full Body</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:2px;">Compound moves + cardio</div>
+    </div>
+    <div style="background:var(--gray-dim);border:1px solid rgba(90,90,110,0.25);border-radius:10px;padding:10px 6px;text-align:center;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px;">SUN</div>
+      <div style="font-size:11px;font-weight:600;color:var(--muted);">Rest</div>
+      <div style="font-size:9px;color:var(--muted);margin-top:2px;">Stretch · Walk · Recover</div>
+    </div>
+  </div>
+
+  <!-- WEEK TABS -->
+  <div class="wk-tabs">
+    <button class="wk-tab active" onclick="switchWk(1)">Week 1</button>
+    <button class="wk-tab" onclick="switchWk(2)">Week 2</button>
+    <button class="wk-tab" onclick="switchWk(3)">Week 3</button>
+    <button class="wk-tab" onclick="switchWk(4)">Week 4</button>
+  </div>
+
+  <!-- WEEK 1 -->
+  <div class="wk-panel active" id="wk-1">
+    <div class="wk-week-header">
+      <span class="wk-week-badge">Week 1</span>
+      <div><div class="wk-week-title">Foundation — Learn the movements</div><div class="wk-week-sub">Focus on form. Controlled reps. Rest 60–90 sec between sets.</div></div>
+    </div>
+    <div class="workout-days">
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">MON / FRI</div><div class="wd-title">Push Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">Chest · Shoulders · Triceps</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Push-ups<span class="ex-note">Standard grip, chest to floor</span></div><div class="ex-sets">3 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Wide push-ups<span class="ex-note">Wider than shoulder width</span></div><div class="ex-sets">3 × 8</div></div>
+          <div class="exercise-row"><div class="ex-name">Pike push-ups<span class="ex-note">Hips high, targets shoulders</span></div><div class="ex-sets">3 × 8</div></div>
+          <div class="exercise-row"><div class="ex-name">Tricep dips<span class="ex-note">Use a chair or low table</span></div><div class="ex-sets">3 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Diamond push-ups<span class="ex-note">Hands form a diamond shape</span></div><div class="ex-sets">2 × 6</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">TUE / THU</div><div class="wd-title">Legs + Core</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">Lower body + abs</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Bodyweight squats<span class="ex-note">Feet shoulder-width, full depth</span></div><div class="ex-sets">3 × 15</div></div>
+          <div class="exercise-row"><div class="ex-name">Reverse lunges<span class="ex-note">Alternate legs, keep chest up</span></div><div class="ex-sets">3 × 10 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Glute bridges<span class="ex-note">Squeeze at top, hold 1 sec</span></div><div class="ex-sets">3 × 15</div></div>
+          <div class="exercise-row"><div class="ex-name">Calf raises<span class="ex-note">Slow and controlled</span></div><div class="ex-sets">3 × 20</div></div>
+          <div class="exercise-row"><div class="ex-name">Plank<span class="ex-note">Elbows or hands, hold steady</span></div><div class="ex-sets">3 × 25 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Crunches<span class="ex-note">Don't pull your neck</span></div><div class="ex-sets">3 × 12</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">WED</div><div class="wd-title">Pull Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">Back · Biceps · Rear delts</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Inverted rows<span class="ex-note">Use a table edge — pull chest to it</span></div><div class="ex-sets">3 × 8</div></div>
+          <div class="exercise-row"><div class="ex-name">Superman holds<span class="ex-note">Lie face down, lift arms + legs</span></div><div class="ex-sets">3 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Rear delt flyes (floor)<span class="ex-note">Lie prone, arms out to sides</span></div><div class="ex-sets">3 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Bicep curls<span class="ex-note">Use a bag or water bottles</span></div><div class="ex-sets">3 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Chin-ups / door-frame rows<span class="ex-note">If available — max effort</span></div><div class="ex-sets">2 × max</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">SAT</div><div class="wd-title">Full Body</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">Compound + cardio</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Burpees<span class="ex-note">Full range, controlled pace</span></div><div class="ex-sets">3 × 8</div></div>
+          <div class="exercise-row"><div class="ex-name">Push-ups<span class="ex-note">Any variation you like</span></div><div class="ex-sets">3 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Jump squats<span class="ex-note">Land softly, absorb with knees</span></div><div class="ex-sets">3 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Mountain climbers<span class="ex-note">Core tight, alternate fast</span></div><div class="ex-sets">3 × 20</div></div>
+          <div class="exercise-row"><div class="ex-name">Plank to push-up<span class="ex-note">Alternate arm, keep hips still</span></div><div class="ex-sets">2 × 8</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="wk-panel" id="wk-2">
+    <div class="wk-week-header">
+      <span class="wk-week-badge">Week 2</span>
+      <div><div class="wk-week-title">Volume up — Add reps & sets</div><div class="wk-week-sub">Same movements, more volume. Rest 60 sec between sets. Feel the burn.</div></div>
+    </div>
+    <div class="workout-days">
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">MON / FRI</div><div class="wd-title">Push Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">↑ Volume</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Push-ups</div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Wide push-ups</div><div class="ex-sets">4 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Pike push-ups</div><div class="ex-sets">4 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Tricep dips</div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Diamond push-ups</div><div class="ex-sets">3 × 8</div></div>
+          <div class="exercise-row"><div class="ex-name">Decline push-ups<span class="ex-note">Feet elevated on chair</span></div><div class="ex-sets">3 × 8</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">TUE / THU</div><div class="wd-title">Legs + Core</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">↑ Volume</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Squats</div><div class="ex-sets">4 × 18</div></div>
+          <div class="exercise-row"><div class="ex-name">Bulgarian split squats<span class="ex-note">Rear foot on chair</span></div><div class="ex-sets">3 × 10 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Glute bridges</div><div class="ex-sets">4 × 18</div></div>
+          <div class="exercise-row"><div class="ex-name">Single-leg calf raises</div><div class="ex-sets">3 × 15 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Plank</div><div class="ex-sets">3 × 40 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Bicycle crunches</div><div class="ex-sets">3 × 16</div></div>
+          <div class="exercise-row"><div class="ex-name">Leg raises<span class="ex-note">Lie flat, raise legs to 90°</span></div><div class="ex-sets">3 × 12</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">WED</div><div class="wd-title">Pull Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">↑ Volume</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Inverted rows</div><div class="ex-sets">4 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Superman holds</div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Rear delt flyes (floor)</div><div class="ex-sets">4 × 14</div></div>
+          <div class="exercise-row"><div class="ex-name">Towel bicep curls<span class="ex-note">Loop towel around door handle</span></div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Chin-ups / door rows</div><div class="ex-sets">3 × max</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">SAT</div><div class="wd-title">Full Body HIIT</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">↑ Intensity</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Burpees</div><div class="ex-sets">4 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Push-ups</div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Jump squats</div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Mountain climbers</div><div class="ex-sets">4 × 24</div></div>
+          <div class="exercise-row"><div class="ex-name">Plank to push-up</div><div class="ex-sets">3 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">High knees<span class="ex-note">30 sec sprint</span></div><div class="ex-sets">3 × 30 sec</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="wk-panel" id="wk-3">
+    <div class="wk-week-header">
+      <span class="wk-week-badge">Week 3</span>
+      <div><div class="wk-week-title">Intensity — Harder variations</div><div class="wk-week-sub">Upgrade to harder exercise variants. Slower negatives (3 sec down). Rest 45–60 sec.</div></div>
+    </div>
+    <div class="workout-days">
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">MON / FRI</div><div class="wd-title">Push Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">↑ Harder variants</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Archer push-ups<span class="ex-note">Shift weight side to side</span></div><div class="ex-sets">4 × 8 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Decline push-ups</div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Handstand hold<span class="ex-note">Against wall — build shoulder strength</span></div><div class="ex-sets">3 × 20 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Tricep dips</div><div class="ex-sets">4 × 15</div></div>
+          <div class="exercise-row"><div class="ex-name">Diamond push-ups</div><div class="ex-sets">4 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Pseudo planche push-ups<span class="ex-note">Hands by hips, lean forward</span></div><div class="ex-sets">3 × 6</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">TUE / THU</div><div class="wd-title">Legs + Core</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">↑ Harder variants</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Single-leg squats (assisted)<span class="ex-note">Hold wall for balance</span></div><div class="ex-sets">3 × 8 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Jump lunges</div><div class="ex-sets">4 × 10 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Single-leg glute bridges</div><div class="ex-sets">4 × 12 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Explosive jump squats</div><div class="ex-sets">4 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Side plank<span class="ex-note">Hold each side</span></div><div class="ex-sets">3 × 30 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">V-ups<span class="ex-note">Reach hands to feet mid-air</span></div><div class="ex-sets">3 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Hollow body hold<span class="ex-note">Lower back pressed to floor</span></div><div class="ex-sets">3 × 20 sec</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">WED</div><div class="wd-title">Pull Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">↑ Harder variants</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Inverted rows (feet elevated)</div><div class="ex-sets">4 × 10</div></div>
+          <div class="exercise-row"><div class="ex-name">Wide superman<span class="ex-note">Arms out wide, slower pace</span></div><div class="ex-sets">4 × 14</div></div>
+          <div class="exercise-row"><div class="ex-name">Rear delt flyes (floor)</div><div class="ex-sets">4 × 16</div></div>
+          <div class="exercise-row"><div class="ex-name">Towel curls<span class="ex-note">Slow 3-sec negative</span></div><div class="ex-sets">4 × 14</div></div>
+          <div class="exercise-row"><div class="ex-name">Chin-ups / door rows</div><div class="ex-sets">4 × max</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">SAT</div><div class="wd-title">Full Body Circuit</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">No rest between</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">3 rounds — 30 sec each exercise, 10 sec rest between</div><div class="ex-sets">Circuit</div></div>
+          <div class="exercise-row"><div class="ex-name">Burpees</div><div class="ex-sets">30 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Push-ups</div><div class="ex-sets">30 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Jump squats</div><div class="ex-sets">30 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Mountain climbers</div><div class="ex-sets">30 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Plank</div><div class="ex-sets">30 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">Rest 90 sec between rounds</div><div class="ex-sets">× 3</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="wk-panel" id="wk-4">
+    <div class="wk-week-header">
+      <span class="wk-week-badge">Week 4</span>
+      <div><div class="wk-week-title">Peak — Max effort week</div><div class="wk-week-sub">Push every set to near-failure. Slow negatives everywhere. Rest 45 sec max.</div></div>
+    </div>
+    <div class="workout-days">
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">MON / FRI</div><div class="wd-title">Push Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">Max effort</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Archer push-ups</div><div class="ex-sets">5 × 10 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Decline push-ups</div><div class="ex-sets">5 × 14</div></div>
+          <div class="exercise-row"><div class="ex-name">Wall handstand push-ups<span class="ex-note">Lower head toward floor</span></div><div class="ex-sets">4 × 5</div></div>
+          <div class="exercise-row"><div class="ex-name">Tricep dips</div><div class="ex-sets">5 × 18</div></div>
+          <div class="exercise-row"><div class="ex-name">Diamond push-ups</div><div class="ex-sets">5 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Pseudo planche push-ups</div><div class="ex-sets">4 × 8</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">TUE / THU</div><div class="wd-title">Legs + Core</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">Max effort</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Pistol squat progression<span class="ex-note">As deep as you can go</span></div><div class="ex-sets">4 × 8 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Jump lunges</div><div class="ex-sets">5 × 12 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Single-leg glute bridges</div><div class="ex-sets">5 × 15 each</div></div>
+          <div class="exercise-row"><div class="ex-name">Explosive jump squats</div><div class="ex-sets">5 × 15</div></div>
+          <div class="exercise-row"><div class="ex-name">Side plank</div><div class="ex-sets">4 × 40 sec</div></div>
+          <div class="exercise-row"><div class="ex-name">V-ups</div><div class="ex-sets">4 × 15</div></div>
+          <div class="exercise-row"><div class="ex-name">Dragon flag negatives<span class="ex-note">Lower slowly from top</span></div><div class="ex-sets">3 × 5</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">WED</div><div class="wd-title">Pull Day</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">Max effort</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">Inverted rows (feet elevated)</div><div class="ex-sets">5 × 12</div></div>
+          <div class="exercise-row"><div class="ex-name">Superman pulse holds</div><div class="ex-sets">5 × 15</div></div>
+          <div class="exercise-row"><div class="ex-name">Rear delt flyes (floor)</div><div class="ex-sets">5 × 18</div></div>
+          <div class="exercise-row"><div class="ex-name">Towel curls — slow negative</div><div class="ex-sets">5 × 15</div></div>
+          <div class="exercise-row"><div class="ex-name">Chin-ups / door rows</div><div class="ex-sets">5 × max</div></div>
+        </div>
+      </div>
+      <div class="workout-day-card">
+        <div class="wd-header"><div><div class="wd-day-num">SAT</div><div class="wd-title">Full Body — Max rounds</div></div><span class="wd-tag" style="background:#4ade8018;color:#4ade80;">AMRAP</span></div>
+        <div class="wd-body">
+          <div class="exercise-row"><div class="ex-name">AMRAP in 20 min (as many rounds as possible)</div><div class="ex-sets">20 min</div></div>
+          <div class="exercise-row"><div class="ex-name">10 push-ups</div><div class="ex-sets">—</div></div>
+          <div class="exercise-row"><div class="ex-name">15 squats</div><div class="ex-sets">—</div></div>
+          <div class="exercise-row"><div class="ex-name">10 mountain climbers</div><div class="ex-sets">—</div></div>
+          <div class="exercise-row"><div class="ex-name">5 burpees</div><div class="ex-sets">—</div></div>
+          <div class="exercise-row"><div class="ex-name">20 sec plank</div><div class="ex-sets">—</div></div>
+          <div class="exercise-row"><div class="ex-name">Log your round count!</div><div class="ex-sets">📝</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="wk-section-label">Key principles</div>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <div class="principle-icon">📈</div>
+      <div class="principle-title">Progressive overload</div>
+      <div class="principle-text">Every week adds reps, sets, or harder variations. This is what forces your muscles to grow.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-icon">🐢</div>
+      <div class="principle-title">Slow negatives</div>
+      <div class="principle-text">Lower yourself in 3 seconds on every push-up, squat, and dip. Slow negatives build more muscle.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-icon">🍗</div>
+      <div class="principle-title">Eat enough protein</div>
+      <div class="principle-text">Aim for 0.8–1g of protein per kg of bodyweight daily. Eggs, chicken, fish, beans, tofu all work.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-icon">😴</div>
+      <div class="principle-title">Sleep 7–8 hours</div>
+      <div class="principle-text">Muscles grow during sleep, not during the workout. Sleep is non-negotiable for muscle building.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-icon">💧</div>
+      <div class="principle-title">Stay hydrated</div>
+      <div class="principle-text">Drink water before, during, and after. Dehydration drops strength by 10–20%.</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-icon">📓</div>
+      <div class="principle-title">Track your reps</div>
+      <div class="principle-text">Write down what you did each session. If you can't beat last week's numbers, something is off.</div>
+    </div>
+  </div>
+
+</div>
+</div><!-- end page-workout -->
+
+<footer>
+  <span>Study Plan · 2026</span>
+  <span>4+ hrs/day · morning studier · 28 days</span>
+</footer>
+
+<script>
+const PURPLE='#9b8dff', TEAL='#2dd4a0', CORAL='#ff6b4a', GRAY='#5a5a6e';
+
+const days = [
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Arduino setup & first blink',topics:['Install Arduino IDE','Understand the Uno board layout','Blink an LED (Hello World)','Understand digital & analog pins'],project:'Blink an LED on and off using delay()'},
+  {track:'web',color:PURPLE,short:'Web',title:'HTML basics',topics:['HTML document structure','Tags: headings, paragraphs, links, images','Lists, tables, forms','Semantic HTML (header, nav, section, footer)'],project:'Build a simple webpage about yourself'},
+  {track:'networking',color:TEAL,short:'Network',title:'How networks work',topics:['What is a network?','OSI model — 7 layers overview','LAN vs WAN','What happens when you open a website'],project:'Draw the OSI model from memory'},
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Buttons & digital input',topics:['Wiring a push button','digitalRead()','If/else logic in Arduino code','Debouncing basics'],project:'LED turns on only when button is held'},
+  {track:'web',color:PURPLE,short:'Web',title:'CSS basics',topics:['Selectors, properties, values','Colors, fonts, spacing','Box model: margin, padding, border','Inline vs block elements'],project:'Style your HTML page from Day 2 with CSS'},
+  {track:'networking',color:TEAL,short:'Network',title:'IP addresses & DNS',topics:['IPv4 structure (octets)','Public vs private IPs','What DNS does','How DHCP assigns IPs'],project:'Find your own IP, gateway, and DNS using ipconfig or ifconfig'},
+  {track:'rest',color:GRAY,short:'Rest',title:'Review & rest',topics:['Revisit anything unclear from Week 1','Organise your notes','Optional: watch a recap video'],project:''},
+
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Analog signals & PWM',topics:['analogRead() with a potentiometer','analogWrite() for PWM brightness','Controlling LED brightness','The map() function'],project:'Dim an LED with a potentiometer'},
+  {track:'web',color:PURPLE,short:'Web',title:'CSS layout — Flexbox',topics:['display: flex','flex-direction, justify-content, align-items','Wrapping and gaps','Build a navbar with flexbox'],project:'Responsive navbar + hero section'},
+  {track:'networking',color:TEAL,short:'Network',title:'TCP/IP & subnetting',topics:['TCP vs UDP differences','TCP handshake: SYN, SYN-ACK, ACK','Subnet masks basics','/24 vs /16 CIDR notation'],project:'Subnet a given IP address range by hand'},
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Sensors — temperature & distance',topics:['Wire DHT11 temp/humidity sensor','Wire HC-SR04 ultrasonic sensor','Read and print to Serial Monitor','Understand sensor libraries'],project:'Print live temperature and distance to Serial Monitor'},
+  {track:'web',color:PURPLE,short:'Web',title:'JavaScript fundamentals',topics:['Variables: let, const, var','Data types, arrays, objects','Functions and arrow functions','Loops: for, while, forEach'],project:'Build a basic calculator in JS'},
+  {track:'networking',color:TEAL,short:'Network',title:'Routers, switches & packets',topics:['How a switch works (MAC table)','How a router works (routing table)','What a packet looks like','Install and use Wireshark'],project:'Capture packets on your network with Wireshark'},
+  {track:'rest',color:GRAY,short:'Rest',title:'Review & rest',topics:['Review sensor wiring diagrams','Revisit JS functions','Rest and recharge!'],project:''},
+
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Servo motors & LCD display',topics:['Wire and control a servo motor','sweep() example','Wire 16x2 LCD with I2C','Display text and sensor readings on LCD'],project:'LCD shows live temperature from DHT11'},
+  {track:'web',color:PURPLE,short:'Web',title:'JavaScript DOM & events',topics:['document.querySelector','innerHTML, textContent','addEventListener: click, input, submit','Dynamic page updates without reload'],project:'To-do list app with add/delete functionality'},
+  {track:'networking',color:TEAL,short:'Network',title:'HTTP & HTTPS',topics:['HTTP methods: GET, POST, PUT, DELETE','Status codes: 200, 404, 500','HTTP request and response headers','How HTTPS and TLS work'],project:'Use browser DevTools Network tab to inspect requests'},
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Wi-Fi with ESP32',topics:['ESP32 vs Arduino Uno — differences','Connect ESP32 to Wi-Fi','Send a GET request to a URL','Serial vs Wi-Fi debugging'],project:'ESP32 prints "Hello from IoT!" to a test server'},
+  {track:'web',color:PURPLE,short:'Web',title:'Fetch API & async JavaScript',topics:['Promises and async/await','fetch() to call an API','Handling JSON responses','Display API data on the page'],project:'Fetch weather from a public API and display it'},
+  {track:'networking',color:TEAL,short:'Network',title:'Firewalls, NAT & VLANs',topics:['What a firewall does','NAT and port forwarding','What VLANs are used for','Basic router firewall config'],project:'Set up port forwarding on your home router'},
+  {track:'rest',color:GRAY,short:'Rest',title:'Review & rest',topics:['Review ESP32 Wi-Fi code','Revisit async/await patterns','Rest!'],project:''},
+
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Arduino sends data to server',topics:['HTTP POST from ESP32','JSON payload formatting','Using the ArduinoJson library','Handle server response codes'],project:'ESP32 POSTs sensor data to a local Express server'},
+  {track:'web',color:PURPLE,short:'Web',title:'Node.js & Express',topics:['What Node.js is and npm basics','package.json structure','Create an Express server','Routes: GET and POST endpoints'],project:'Express server receives Arduino data and logs it to console'},
+  {track:'networking',color:TEAL,short:'Network',title:'Network tools & troubleshooting',topics:['ping, traceroute, nslookup','netstat and open ports','Diagnosing connection issues','Cisco Packet Tracer intro'],project:'Simulate a small network in Packet Tracer'},
+  {track:'arduino',color:CORAL,short:'Arduino',title:'Capstone hardware build',topics:['Final wiring of all sensors','Clean up breadboard layout','Add LCD status display','Document your circuit diagram'],project:'All sensors and LCD running stably together'},
+  {track:'web',color:PURPLE,short:'Web',title:'Database & full-stack wiring',topics:['Intro to MongoDB or SQLite','Save Arduino data to the database','Build a React front-end','Fetch and display live sensor data'],project:'React dashboard shows live Arduino sensor readings'},
+  {track:'networking',color:TEAL,short:'Network',title:'Deploy & go live',topics:['Dynamic DNS setup','Deploy Express to Render or Railway','Expose local server to the internet','Test the full end-to-end flow'],project:'Your dashboard is live on the internet!'},
+  {track:'rest',color:GRAY,short:'Rest',title:'Final review & celebrate!',topics:['Review your full capstone project','Write down what you learned','Plan your month 2 topics','Share your project with someone!'],project:''},
+];
+
+const weekLabels = ['Week 1 — Foundations','Week 2 — Core skills','Week 3 — Integration','Week 4 — Full project build'];
+
+let selected = null;
+let completed = new Set(JSON.parse(localStorage.getItem('completed') || '[]'));
+
+function saveCompleted() {
+  localStorage.setItem('completed', JSON.stringify([...completed]));
+}
+
+function getTrackClass(track) {
+  if (track==='arduino') return 'c-arduino';
+  if (track==='web') return 'c-web';
+  if (track==='networking') return 'c-networking';
+  return 'c-rest';
+}
+
+function renderCalendar() {
+  const cal = document.getElementById('calendar');
+  cal.innerHTML = '';
+  for (let w=0; w<4; w++) {
+    const group = document.createElement('div');
+    group.className = 'week-group';
+    const lbl = document.createElement('div');
+    lbl.className = 'week-label';
+    lbl.textContent = weekLabels[w];
+    group.appendChild(lbl);
+    const grid = document.createElement('div');
+    grid.className = 'days-grid';
+    for (let d=0; d<7; d++) {
+      const idx = w*7+d;
+      const day = days[idx];
+      const card = document.createElement('div');
+      card.className = 'day-card ' + getTrackClass(day.track) + (selected===idx ? ' active' : '');
+      if (day.track==='rest') {
+        card.innerHTML = `<div class="day-num">DAY ${idx+1}</div><span class="day-rest-icon">☽</span><div class="day-track" style="color:${day.color};text-align:center">Rest</div>`;
+      } else {
+        const done = completed.has(idx);
+        card.innerHTML = `
+          <div class="day-num">DAY ${idx+1}${done?' ✓':''}</div>
+          <div class="day-track" style="color:${day.color}">${day.short}</div>
+          <div class="day-title">${day.title}</div>`;
+      }
+      card.onclick = () => { selected = idx; renderCalendar(); renderDetail(idx); };
+      grid.appendChild(card);
+    }
+    group.appendChild(grid);
+    cal.appendChild(group);
+  }
+  updateProgress();
+}
+
+function renderDetail(idx) {
+  const day = days[idx];
+  document.getElementById('detail-placeholder').style.display = 'none';
+  const content = document.getElementById('detail-content');
+  content.style.display = 'block';
+  const done = completed.has(idx);
+  const projectHtml = day.project ? `
+    <div class="detail-section-label">Mini project</div>
+    <div class="project-box" style="border-left-color:${day.color};background:${day.color}18;">
+      <div class="project-box-label" style="color:${day.color}">Build it</div>
+      <div class="project-box-text">${day.project}</div>
+    </div>` : '';
+  const markBtn = day.track !== 'rest' ? `
+    <button onclick="toggleDone(${idx})" style="margin-top:16px;width:100%;padding:10px;border-radius:8px;border:1px solid ${done?day.color:'rgba(255,255,255,0.1)'};background:${done?day.color+'22':'transparent'};color:${done?day.color:'var(--muted)'};font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;">
+      ${done ? '✓ Marked complete' : 'Mark as complete'}
+    </button>` : '';
+  content.innerHTML = `
+    <div class="detail-day-num">DAY ${idx+1} OF 28</div>
+    <div class="detail-track-badge" style="background:${day.color}22;color:${day.color}">${day.short}</div>
+    <div class="detail-title">${day.title}</div>
+    <div class="detail-section-label">Topics to cover today</div>
+    <ul class="topic-list">${day.topics.map(t=>`<li>${t}</li>`).join('')}</ul>
+    ${projectHtml}
+    ${markBtn}
+  `;
+}
+
+function toggleDone(idx) {
+  if (completed.has(idx)) completed.delete(idx);
+  else completed.add(idx);
+  saveCompleted();
+  renderCalendar();
+  renderDetail(idx);
+}
+
+function updateProgress() {
+  const total = days.filter(d=>d.track!=='rest').length;
+  const done = [...completed].filter(i=>days[i].track!=='rest').length;
+  const pct = Math.round(done/total*100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = `${done} / ${total} days`;
+}
+
+renderCalendar();
+
+function switchPage(page) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.page-tab').forEach(t => {
+    if (t.textContent.toLowerCase().includes(page === 'plan' ? 'plan' : 'routine')) t.classList.add('active');
+  });
+}
+</script>
+</body>
+</html>
